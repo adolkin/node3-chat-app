@@ -40,15 +40,34 @@ const removeUser = (id) => {
   }
 }
 
+const getUser = (id) => {
+  return users.find((user) => user.id === id)
+}
+
+const getUsersInRoom = (room) => {
+  room = room.trim().toLowerCase()
+  return users.filter((user) => user.room === room)
+}
+
+
 addUser({
   id: 22,
   username: 'Andrew  ',
   room: 'South'
 })
 
-console.log(users)
+addUser({
+  id: 42,
+  username: 'Mike  ',
+  room: 'South'
+})
 
-const removedUser = removeUser(22)
+addUser({
+  id: 32,
+  username: 'Andrew  ',
+  room: 'North'
+})
 
-console.log(removedUser)
-console.log(users)
+
+const userList = getUsersInRoom('North');
+console.log(userList)
