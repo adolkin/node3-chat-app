@@ -33,8 +33,6 @@ const addUser = ({ id, username, room }) => {
 }
 
 const removeUser = (id) => {
-  console.log(id)
-  console.log(users)
   const index = users.findIndex((user) => user.id === id)
 
   if (index !== -1) {
